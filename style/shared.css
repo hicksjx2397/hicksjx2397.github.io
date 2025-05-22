@@ -27,7 +27,8 @@
       margin: 8px 0;
       border: none;
       cursor: pointer;
-      width: 100%;
+      width: 2%;
+      height: 2%;
     }
     
     button:hover {
