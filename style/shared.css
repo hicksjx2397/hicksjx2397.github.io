@@ -1,4 +1,4 @@
-.item1 { grid-area: header; }
+    .item1 { grid-area: header; }
     .item2 { grid-area: menu; }
     .item3 { grid-area: main; }
     .item4 { grid-area: right; }
@@ -21,7 +21,6 @@
     
     
     button {
-      background-color: lightcoral;
       color: white;
       padding: 14px 20px;
       margin: 8px 0;
@@ -74,14 +73,21 @@
     /* nav bar code */
     
     .navbar {
-      overflow: hidden;
       background-color: rgb(93, 81, 121);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000; 
+      overflow: hidden;
     }
     
     .navbar a {
+
       float: left;
       font-size: 16px;
       color: whitesmoke;
+      opacity: 1;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
@@ -105,6 +111,7 @@
     
     .navbar a:hover, .dropdown:hover .dropbtn {
       background-color: rgb(87, 31, 78);
+
     }
     
     .dropdown-content {
@@ -164,4 +171,8 @@
       font-size: 20px;
         color: lightcoral;
         font-family: fantasy;
+    }
+
+    .content-below-navbar {
+      margin-top: 60px; 
     }
