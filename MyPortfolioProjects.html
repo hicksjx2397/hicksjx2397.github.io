@@ -21,6 +21,87 @@
             padding-left: 20px;
             font-size: larger;
         }
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    margin: 2em auto;
+    max-width: 1200px;
+  }
+  .project-card {
+    background-color: rgb(93, 81, 121);
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    gap: 1.5em;
+    min-width: 280px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .project-card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    transform: translateY(-2px) scale(1.01);
+  }
+  .project-card img {
+    width: 120px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid whitesmoke;
+    background: #fff;
+  }
+  .project-desc {
+    color: whitesmoke;
+    text-align: left;
+    font-size: 1em;
+    flex: 1;
+  }
+  @media (max-width: 900px) {
+    .projects-container {
+      gap: 1em;
+    }
+    .project-card {
+      max-width: 95vw;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1em;
+    }
+    .project-card img {
+      width: 100%;
+      max-width: 220px;
+      height: auto;
+      margin-bottom: 1em;
+    }
+  }
+  @media (max-width: 600px) {
+    .projects-container {
+      flex-direction: column;
+      gap: 1em;
+      padding: 0 0.5em;
+    }
+    .project-card {
+      max-width: 100vw;
+      min-width: 0;
+      padding: 0.5em;
+    }
+    .project-card img {
+      max-width: 100vw;
+      width: 100%;
+      height: auto;
+    }
+    .project-desc {
+      font-size: 0.95em;
+    }
+  }
 </style>
 <script src=""></script>
 <body>
@@ -36,49 +117,44 @@
     </div>
 <div class="content-below-navbar">
 <h1 style="text-align: center; color: whitesmoke; text-decoration:underline;" >Projects</h1>
-
-<button class="button button1">
-<a href="https://github.com/hicksjx2397/TileGame_JosephHicks"><img id="get-image" src="Referenced/Images/TileGame.PNG" alt="LA" style="width:240px;height:200px"></a>
-
-<span style="color: whitesmoke; text-align: left;">Tile Game:<br/><br/><br/>
-    Program generates a 3x3 tile game in the command line.<br/>
-    It presents the user with a prompt that allows the user<br/>
-    to play the tile game, and/or get a one move hint.</span>
-</button>
-
-<button class="button button1">
-<a href="https://github.com/hicksjx2397/TwitterApi_JosephHicks"><img id="get-image" src="Referenced/Images/TwitterAPI.PNG" alt="LA" style="width:240px;height:200px"></a>
-<span style="color: whitesmoke; text-align: left;">Twitter API:<br/><br/><br/>
-This Project is designed to emulate the ralationships between<br/>
-Users, tweets, and hashtags in a social media platform like<br/>
-twitter. All of this information is stored and accessed in a database<br/>
-and includes functionality to access threads, mentions, and reposts.</span>
-</button>
-
-<button class="button button1">
-    <a href="https://github.com/hicksjx2397/Angular-Website"><img id="get-image" src="Referenced/Images/FinalAssignment.PNG" alt="LA" style="width:240px;height:200px"></a>
-    <span style="color: whitesmoke; text-align: left;">Angular Company Website:<br/><br/><br/>
-    A web-based application that stores user data for <br/>
-    a company structure with workers and admins. As well as  <br/>
-    allow said admins to assign teams and create projects.</span>
-</button>
-
-<button class="button button1">
-    <a href="https://github.com/hicksjx2397/SpotifyBrowserGame"><img id="get-image" src="Referenced/Images/Who'sWho.PNG" alt="LA" style="width:240px;height:200px"></a>
-    <span style="color: whitesmoke; text-align: left;">Browser Guessing Game:<br/><br/><br/>
-    A browser based guessing game created with Angular. <br/>
-    Game interacts with Spotify API to pull songs for the<br/>
-    user to guess based on the audio and other hints if enabled.</span>
-    </button>
-
-
-<button class="button button1">
-    <a href="https://github.com/hicksjx2397/SGFEI"><img id="get-image" src="Referenced/Images/UnityProject.PNG" alt="LA" style="width:240px;height:200px"></a>
-    <span style="color: whitesmoke; text-align: left">SGEFEI Unity Game:<br/><br/><br/>
-    A simple 2D platformer created in Unity Engine.<br/>
-    You play as Superguy, stuck on an island full of threats,<br/>
-    where you are tasked with surviving until evacuation arrives.<br/></span>
-    </button>
+<div class="projects-container">
+  <a href="https://github.com/hicksjx2397/TileGame_JosephHicks" class="project-card" target="_blank" rel="noopener">
+    <img src="Referenced/Images/TileGame.PNG" alt="Tile Game">
+    <div class="project-desc">
+      <strong>Tile Game:</strong><br><br>
+      Program generates a 3x3 tile game in the command line.<br>
+      It presents the user with a prompt that allows the user to play the tile game, and/or get a one move hint.
+    </div>
+  </a>
+  <a href="https://github.com/hicksjx2397/TwitterApi_JosephHicks" class="project-card" target="_blank" rel="noopener">
+    <img src="Referenced/Images/TwitterAPI.PNG" alt="Twitter API">
+    <div class="project-desc">
+      <strong>Twitter API:</strong><br><br>
+      This Project is designed to emulate the relationships between users, tweets, and hashtags in a social media platform like Twitter. All of this information is stored and accessed in a database and includes functionality to access threads, mentions, and reposts.
+    </div>
+  </a>
+  <a href="https://github.com/hicksjx2397/Angular-Website" class="project-card" target="_blank" rel="noopener">
+    <img src="Referenced/Images/FinalAssignment.PNG" alt="Angular Company Website">
+    <div class="project-desc">
+      <strong>Angular Company Website:</strong><br><br>
+      A web-based application that stores user data for a company structure with workers and admins. As well as allow said admins to assign teams and create projects.
+    </div>
+  </a>
+  <a href="https://github.com/hicksjx2397/SpotifyBrowserGame" class="project-card" target="_blank" rel="noopener">
+    <img src="Referenced/Images/Who'sWho.PNG" alt="Browser Guessing Game">
+    <div class="project-desc">
+      <strong>Browser Guessing Game:</strong><br><br>
+      A browser based guessing game created with Angular. Game interacts with Spotify API to pull songs for the user to guess based on the audio and other hints if enabled.
+    </div>
+  </a>
+  <a href="https://github.com/hicksjx2397/SGFEI" class="project-card" target="_blank" rel="noopener">
+    <img src="Referenced/Images/UnityProject.PNG" alt="SGEFEI Unity Game">
+    <div class="project-desc">
+      <strong>SGEFEI Unity Game:</strong><br><br>
+      A simple 2D platformer created in Unity Engine. You play as Superguy, stuck on an island full of threats, where you are tasked with surviving until evacuation arrives.
+    </div>
+  </a>
+</div>
 </div>
 </body>
 </html>
